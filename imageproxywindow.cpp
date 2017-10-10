@@ -26,11 +26,11 @@ ImageProxyWindow::ImageProxyWindow(QWidget *parent)
 
 void ImageProxyWindow::load() {
     this->imageReader.load(this->path);
-    this->image->setPixmap(QPixmap::fromImage(this->imageReader.getImage()));
+    this->image->setPixmap(QPixmap::fromImage(this->imageReader.getImage()).scaled(3000,800,Qt::KeepAspectRatio));
 }
 void ImageProxyWindow::loadProxy() {
     this->imageReaderProxy.load(this->path);
-    this->image->setPixmap(QPixmap::fromImage(this->imageReaderProxy.getImage()));
+    this->image->setPixmap(QPixmap::fromImage(this->imageReaderProxy.getImage()).scaled(3000,800,Qt::KeepAspectRatio));
 }
 
 void ImageProxyWindow::loadPath() {
